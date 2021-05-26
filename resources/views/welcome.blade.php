@@ -10,7 +10,7 @@
         <hr>
         <ul class="nav nav-pills flex-column mb-auto ms-2">
             <li class="nav-item">
-                <a href="#" class="nav-link  navtxt " aria-current="page">
+                <a href="{{route('main')}}" class="nav-link  navtxt " aria-current="page">
                     Admin Panel
                 </a>
             </li>

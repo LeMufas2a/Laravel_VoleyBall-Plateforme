@@ -1,5 +1,10 @@
 <?php
 
+use App\Http\Controllers\ContinentController;
+use App\Http\Controllers\EquipeController;
+use App\Http\Controllers\GenreController;
+use App\Http\Controllers\JoueurController;
+use App\Http\Controllers\PhotoController;
 use Illuminate\Support\Facades\Route;
 
 /*
@@ -13,6 +18,23 @@ use Illuminate\Support\Facades\Route;
 |
 */
 
+//Home
 Route::get('/', function () {
     return view('welcome');
 });
+
+
+//Equipe
+Route::resource("/equipe", EquipeController::class);
+
+//Joueur
+Route::resource('/joueur', JoueurController::class);
+
+//Photo
+Route::resource('/photo', PhotoController::class);
+Route::post("photo/{id}/download", [PhotoController::class, 'download']);
+
+// Principale
+Route::get('/Admin', function(){
+    return view('backoffice.principale.principale');
+})->name('main');
