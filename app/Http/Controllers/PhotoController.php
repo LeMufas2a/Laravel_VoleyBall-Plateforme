@@ -4,6 +4,7 @@ namespace App\Http\Controllers;
 
 use App\Models\Photo;
 use Illuminate\Http\Request;
+use Illuminate\Support\Facades\Storage;
 
 class PhotoController extends Controller
 {
@@ -81,5 +82,11 @@ class PhotoController extends Controller
     public function destroy(Photo $photo)
     {
         //
+    }
+    public function download($id)
+    {
+        $photo = Photo::find($id);
+
+        return Storage::disk('public')->download('img/' . $photo->url);
     }
 }

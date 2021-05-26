@@ -5,7 +5,7 @@ namespace App\Http\Controllers;
 use App\Models\Genre;
 use Illuminate\Http\Request;
 
-class ContinentController extends Controller
+class GenreController extends Controller
 {
     /**
      * Display a listing of the resource.
@@ -14,8 +14,6 @@ class ContinentController extends Controller
      */
     public function index()
     {
-        $genres = Genre::all();
-        return view("backoffice.genre.all", compact("genres"));
     }
 
     /**
@@ -25,7 +23,6 @@ class ContinentController extends Controller
      */
     public function create()
     {
-        return view("backoffice.genre.create");
     }
 
     /**
@@ -36,13 +33,6 @@ class ContinentController extends Controller
      */
     public function store(Request $request)
     {
-        $genre = new Genre();
-        $genre -> nom = $request -> nom;
-        $genre -> created_at = now();
-
-        $genre -> save();
-
-        return redirect() -> route("genres.index");
     }
 
     /**
@@ -53,8 +43,6 @@ class ContinentController extends Controller
      */
     public function show(Genre $genre)
     {
-        return view("backoffice.genre.show", compact("genre"));
-
     }
 
     /**
@@ -65,8 +53,6 @@ class ContinentController extends Controller
      */
     public function edit(Genre $genre)
     {
-        return view("backoffice.genre.edit", compact("genre"));
-                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                         
     }
 
     /**
@@ -78,12 +64,6 @@ class ContinentController extends Controller
      */
     public function update(Request $request, Genre $continent)
     {
-        $continent -> type = $request -> type;
-        $continent -> updated_at = now();
-
-        $continent -> save();
-
-        return redirect() -> route("genres.index");
     }
 
     /**
@@ -94,8 +74,5 @@ class ContinentController extends Controller
      */
     public function destroy(Genre $genre)
     {
-        $genre -> delete();
-
-        return redirect() -> back();
     }
 }

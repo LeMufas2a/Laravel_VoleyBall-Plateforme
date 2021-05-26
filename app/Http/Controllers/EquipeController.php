@@ -2,7 +2,6 @@
 
 namespace App\Http\Controllers;
 
-use App\Models\Continent;
 use App\Models\Equipe;
 use Illuminate\Http\Request;
 
@@ -26,8 +25,7 @@ class EquipeController extends Controller
      */
     public function create()
     {
-        $continents = Continent::all();
-        return view('backoffice.equipe.create', compact('continents'));
+        return view('backoffice.equipe.create');
     }
 
     /**
@@ -83,8 +81,7 @@ class EquipeController extends Controller
      */
     public function edit(Equipe $equipe)
     {
-        $continents = Continent::all();
-        return view('backoffice.equipe.edit', compact('equipe', 'continents'));
+        return view('backoffice.equipe.edit', compact('equipe'));
     }
 
     /**
@@ -116,7 +113,7 @@ class EquipeController extends Controller
         $equipe->RP = $request->RP;
         $equipe->continent_id = $request->continent_id;
         $equipe->updated_at = now();
-        
+
         $equipe->save();
         return redirect()->route('equipes.index')->with('message', 'Vous avez édité une équipe.');
     }
@@ -132,5 +129,4 @@ class EquipeController extends Controller
         $equipe->delete();
         return redirect()->back()->with('message', 'Vous avez supprimé une équipe.');
     }
-
 }

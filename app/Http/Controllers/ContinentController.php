@@ -14,8 +14,6 @@ class ContinentController extends Controller
      */
     public function index()
     {
-        $continents = Continent::all();
-        return view("backoffice.continent.all", compact("continents"));
     }
 
     /**
@@ -25,7 +23,6 @@ class ContinentController extends Controller
      */
     public function create()
     {
-        return view("backoffice.continent.create");
     }
 
     /**
@@ -36,13 +33,6 @@ class ContinentController extends Controller
      */
     public function store(Request $request)
     {
-        $continent = new Continent();
-        $continent -> nom = $request -> nom;
-        $continent -> created_at = now();
-
-        $continent -> save();
-
-        return redirect() -> route("continents.index");
     }
 
     /**
@@ -53,8 +43,6 @@ class ContinentController extends Controller
      */
     public function show(Continent $continent)
     {
-        return view("backoffice.continent.show", compact("continent"));
-
     }
 
     /**
@@ -65,8 +53,6 @@ class ContinentController extends Controller
      */
     public function edit(Continent $continent)
     {
-        return view("backoffice.continent.edit", compact("continent"));
-                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                         
     }
 
     /**
@@ -78,12 +64,6 @@ class ContinentController extends Controller
      */
     public function update(Request $request, Continent $continent)
     {
-        $continent -> nom = $request -> nom;
-        $continent -> updated_at = now();
-
-        $continent -> save();
-
-        return redirect() -> route("continents.index");
     }
 
     /**
@@ -94,8 +74,5 @@ class ContinentController extends Controller
      */
     public function destroy(Continent $continent)
     {
-        $continent -> delete();
-
-        return redirect() -> back();
     }
 }

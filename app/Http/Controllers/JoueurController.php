@@ -3,9 +3,10 @@
 namespace App\Http\Controllers;
 
 use App\Models\Joueur;
+use App\Models\Photo;
 use Illuminate\Http\Request;
 
-class ContinentController extends Controller
+class JoueurController extends Controller
 {
     /**
      * Display a listing of the resource.
@@ -37,19 +38,19 @@ class ContinentController extends Controller
     public function store(Request $request)
     {
         $joueur = new Joueur();
-        $joueur -> nom = $request -> nom;
-        $joueur -> prenom = $request -> prenom;
-        $joueur -> age = $request -> age;
-        $joueur -> numero = $request -> numero;
-        $joueur -> pays = $request -> pays;
-        $joueur -> genre_id = $request -> genre_id;
-        $joueur -> role_id = $request -> role_id;
-        $joueur -> equipe_id = $request -> equipe_id;
-        $joueur -> created_at = now();
+        $joueur->nom = $request->nom;
+        $joueur->prenom = $request->prenom;
+        $joueur->age = $request->age;
+        $joueur->numero = $request->numero;
+        $joueur->pays = $request->pays;
+        $joueur->genre_id = $request->genre_id;
+        $joueur->role_id = $request->role_id;
+        $joueur->equipe_id = $request->equipe_id;
+        $joueur->created_at = now();
 
-        $joueur -> save();
+        $joueur->save();
 
-        return redirect() -> route("continents.index");
+        return redirect()->route("joueurs.index");
     }
 
     /**
@@ -61,7 +62,6 @@ class ContinentController extends Controller
     public function show(Joueur $joueur)
     {
         return view("backoffice.joueur.show", compact("joueur"));
-
     }
 
     /**
@@ -73,7 +73,6 @@ class ContinentController extends Controller
     public function edit(Joueur $joueur)
     {
         return view("backoffice.joueur.edit", compact("joueur"));
-                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                         
     }
 
     /**
@@ -85,19 +84,19 @@ class ContinentController extends Controller
      */
     public function update(Request $request, Joueur $joueur)
     {
-        $joueur -> nom = $request -> nom;
-        $joueur -> prenom = $request -> prenom;
-        $joueur -> age = $request -> age;
-        $joueur -> numero = $request -> numero;
-        $joueur -> pays = $request -> pays;
-        $joueur -> genre_id = $request -> genre_id;
-        $joueur -> role_id = $request -> role_id;
-        $joueur -> equipe_id = $request -> equipe_id;
-        $joueur -> updated_at = now();
+        $joueur->nom = $request->nom;
+        $joueur->prenom = $request->prenom;
+        $joueur->age = $request->age;
+        $joueur->numero = $request->numero;
+        $joueur->pays = $request->pays;
+        $joueur->genre_id = $request->genre_id;
+        $joueur->role_id = $request->role_id;
+        $joueur->equipe_id = $request->equipe_id;
+        $joueur->updated_at = now();
 
-        $joueur -> save();
+        $joueur->save();
 
-        return redirect() -> route("joueurs.index");
+        return redirect()->route("joueurs.index");
     }
 
     /**
@@ -106,11 +105,11 @@ class ContinentController extends Controller
      * @param  \App\Models\Album  $album
      * @return \Illuminate\Http\Response
      */
-    public function destroy(Joueur $joueur)
+    public function destroy(Joueur $joueur, $id)
     {
-        $joueur -> delete();
-
-        return redirect() -> back();
+        $photo = Photo::find($id);
+        $photo->delete();
+        $joueur->delete();
+        return redirect()->back();
     }
 }
-

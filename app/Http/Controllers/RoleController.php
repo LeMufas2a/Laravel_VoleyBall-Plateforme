@@ -5,7 +5,7 @@ namespace App\Http\Controllers;
 use App\Models\Role;
 use Illuminate\Http\Request;
 
-class ContinentController extends Controller
+class RoleController extends Controller
 {
     /**
      * Display a listing of the resource.
@@ -14,8 +14,6 @@ class ContinentController extends Controller
      */
     public function index()
     {
-        $roles = Role::all();
-        return view("backoffice.role.all", compact("roles"));
     }
 
     /**
@@ -25,7 +23,6 @@ class ContinentController extends Controller
      */
     public function create()
     {
-        return view("backoffice.role.create");
     }
 
     /**
@@ -36,13 +33,6 @@ class ContinentController extends Controller
      */
     public function store(Request $request)
     {
-        $role = new Role();
-        $role -> nom = $request -> nom;
-        $role -> created_at = now();
-
-        $role -> save();
-
-        return redirect() -> route("roles.index");
     }
 
     /**
@@ -53,8 +43,6 @@ class ContinentController extends Controller
      */
     public function show(Role $continent)
     {
-        return view("backoffice.role.show", compact("role"));
-
     }
 
     /**
@@ -65,8 +53,6 @@ class ContinentController extends Controller
      */
     public function edit(Role $role)
     {
-        return view("backoffice.role.edit", compact("role"));
-                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                         
     }
 
     /**
@@ -78,12 +64,6 @@ class ContinentController extends Controller
      */
     public function update(Request $request, Role $role)
     {
-        $role -> nom = $request -> nom;
-        $role -> updated_at = now();
-
-        $role -> save();
-
-        return redirect() -> route("roles.index");
     }
 
     /**
@@ -94,8 +74,5 @@ class ContinentController extends Controller
      */
     public function destroy(Role $role)
     {
-        $role -> delete();
-
-        return redirect() -> back();
     }
 }
