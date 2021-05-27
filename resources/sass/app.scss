@@ -21,6 +21,13 @@ body {
     background: linear-gradient(-90deg, rgb(246, 33, 68), #c00010);
 }
 
+.validate{
+    color: white;
+}
+.validate:hover{
+    color: rgb(54, 148, 82);
+}
+
 // FAwsme
 
 @import "~@fortawesome/fontawesome-free/scss/fontawesome";
