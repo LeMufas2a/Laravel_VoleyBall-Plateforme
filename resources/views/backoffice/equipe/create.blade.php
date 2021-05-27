@@ -22,9 +22,9 @@
 
                 <div class="mb-3">
                     <label class="form-label">Continent</label>
-                    <select name="continent" class="form-control">
+                    <select name="continent_id" class="form-control">
                         @foreach ($continents as $continent)
-                        <option value="{{$continent->nom}}">{{$continent->nom}}</option>
+                        <option value="{{$continent->id}}">{{$continent->nom}}</option>
                         @endforeach
                     </select>
                 </div>

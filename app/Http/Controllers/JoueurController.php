@@ -16,7 +16,6 @@ class JoueurController extends Controller
     public function index()
     {
         $joueurs = Joueur::all();
-        
         return view("backoffice.joueur.all", compact("joueurs"));
     }
 

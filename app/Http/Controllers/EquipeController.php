@@ -15,9 +15,8 @@ class EquipeController extends Controller
      */
     public function index()
     {
-        $equipes = Equipe::paginate(5);
-        $continent = Continent::all();
-        return view('backoffice.equipe.all', compact('equipes', 'continent'));
+        $equipes = Equipe::paginate(6);
+        return view('backoffice.equipe.all', compact('equipes'));
     }
 
     /**
@@ -62,7 +61,7 @@ class EquipeController extends Controller
         $equipe->updated_at = now();
         $equipe->continent_id = $request->continent_id;
         $equipe->save();
-        return redirect()->route('equipes.index')->with('message', 'Vous avez créé une équipe.');
+        return redirect()->route('equipe.index')->with('message', 'Vous avez créé une équipe.');
     }
 
     /**
@@ -119,7 +118,7 @@ class EquipeController extends Controller
         $equipe->updated_at = now();
 
         $equipe->save();
-        return redirect()->route('equipes.index')->with('message', 'Vous avez édité une équipe.');
+        return redirect()->route('equipe.index')->with('message', 'Vous avez édité une équipe.');
     }
 
     /**
