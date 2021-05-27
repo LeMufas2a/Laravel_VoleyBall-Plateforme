@@ -3,14 +3,18 @@
 @section('content')
 @include('partials.nav')
 <main>
+    <h1 class="text-center my-5 text-white">Equipes</h1>
+    <div class="w-100 d-flex justify-content-center">
+        <a class="btn shadow-none create fs-1   px-4 create" href={{ route("equipe.create") }}><i
+                class="fas fa-plus"></i></a>
+    </div>
     @foreach ($equipes as $equipe)
-
     <div class="col-4">
         <div class="profile-card-6"><img src="http://envato.jayasankarkr.in/code/profile/assets/img/profile-6.jpg"
                 class="img img-responsive">
             <div class="profile-name">{{$equipe->nom}}
                 <br>{{$equipe->ville}} in {{$equipe->pays}}</div>
-            <div class="profile-position">Lorem Ipsum Donor</div>
+            <div class="profile-position">{{$equipe->$continent}}</div>
             <div class="profile-overview">
                 <div class="profile-overview">
                     <div class="row text-center">
@@ -19,8 +23,6 @@
                                 <h3>{{$equipe->max}}/7</h3>
                                 <p>Joueurs</p>
                             </div>
-                        </div>
-                        <div class="col-xs-4">
                             <div class="d-flex justify-content-around">
                                 <div>
                                     <h3>{{$equipe->DC}}</h3>
@@ -33,7 +35,6 @@
                             </div>
                         </div>
                         <div class="col-xs-4">
-
                             <div class="d-flex justify-content-around">
                                 <div>
                                     <h3>{{$equipe->CT}}</h3>
@@ -43,6 +44,20 @@
                                     <h3>{{$equipe->RP}}</h3>
                                     <p>RP</p>
                                 </div>
+                            </div>
+                        </div>
+                        <div class="col-xs-4">
+                            <div class="d-flex w-100 justify-content-center">
+                                <a class="btn shadow-none fs-2  show" href={{ route("equipe.show", $equipe->id) }}><i
+                                        class="fas fa-eye"></i></a>
+                                <a class="btn edit mx-1 shadow-none fs-2"
+                                    href={{ route("equipe.edit", $equipe->id) }}><i class="fas fa-user-edit"></i></a>
+                                <form action={{ route("equipe.destroy", $equipe->id) }} method="post">
+                                    @csrf
+                                    @method("delete")
+                                    <button class="btn shadow-none  mx-1 fs-2  delete" type="submit"><i
+                                            class="fas fa-trash-alt"></i></button>
+                                </form>
                             </div>
                         </div>
                     </div>
@@ -56,10 +71,7 @@
 </main>
 @endsection
 
-{{-- <h1 class="text-center my-5">equipes</h1>
-<div class="w-100 d-flex justify-content-between">
-    <a class="btn btn-success" href={{ route("equipe.create") }}>Create</a>
-</div>
+{{-- 
 <table class="table">
     <thead>
         <tr>
@@ -73,22 +85,14 @@
         @foreach ($equipes as $equipe)
         <tr>
             <th scope="row">{{ $equipe->id }}</th>
-            <td>{{ $equipe->nom }}</td>
-            <td>{{ $equipe->description }}</td>
-            <td>
-                <div class="d-flex">
-                    <a class="btn text-white mx-1 btn-warning" href={{ route("equipe.show", $equipe->id) }}>Show</a>
-                    <a class="btn text-white mx-1 btn-primary" href={{ route("equipe.edit", $equipe->id) }}>Edit</a>
-                    <form action={{ route("equipe.destroy", $equipe->id) }} method="post">
-                        @csrf
-                        @method("delete")
-                        <button class="btn text-white mx-1 btn-danger" type="submit">Delete</button>
-                    </form>
-                </div>
-            </td>
-        </tr>
-        @endforeach
-    </tbody>
+<td>{{ $equipe->nom }}</td>
+<td>{{ $equipe->description }}</td>
+<td>
+
+</td>
+</tr>
+@endforeach
+</tbody>
 </table>
 <div class="container">
     <div class="row"> --}}

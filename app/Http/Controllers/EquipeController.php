@@ -2,6 +2,7 @@
 
 namespace App\Http\Controllers;
 
+use App\Models\Continent;
 use App\Models\Equipe;
 use Illuminate\Http\Request;
 
@@ -15,7 +16,8 @@ class EquipeController extends Controller
     public function index()
     {
         $equipes = Equipe::paginate(5);
-        return view('backoffice.equipe.all', compact('equipes'));
+        $continent = Continent::all();
+        return view('backoffice.equipe.all', compact('equipes', 'continent'));
     }
 
     /**
@@ -25,7 +27,8 @@ class EquipeController extends Controller
      */
     public function create()
     {
-        return view('backoffice.equipe.create');
+        $continents = Continent::all();
+        return view('backoffice.equipe.create', compact('continents'));
     }
 
     /**

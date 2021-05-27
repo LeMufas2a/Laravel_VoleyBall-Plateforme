@@ -10861,6 +10861,11 @@ main {
   margin-left: 16% !important;
 }
 
+body {
+  font-family: monospace;
+  background: linear-gradient(-90deg, #e205a0, #0e1fb6);
+}
+
 /*!
  * Font Awesome Free 5.15.3 by @fontawesome - https://fontawesome.com
  * License - https://fontawesome.com/license/free (Icons: CC BY 4.0, Fonts: SIL OFL 1.1, Code: MIT License)
@@ -17059,4 +17064,36 @@ readers do not read off random characters that represent icons */
 
 .profile-card-6:hover .profile-overview {
   padding-bottom: 25px;
+}
+
+.edit {
+  color: white;
+}
+
+.edit:hover {
+  color: #62c9d6;
+}
+
+.delete {
+  color: white;
+}
+
+.delete:hover {
+  color: #c80909;
+}
+
+.create {
+  color: white;
+}
+
+.create:hover {
+  color: #4cbd77;
+}
+
+.show {
+  color: white;
+}
+
+.show:hover {
+  color: #b7c819;
 }
