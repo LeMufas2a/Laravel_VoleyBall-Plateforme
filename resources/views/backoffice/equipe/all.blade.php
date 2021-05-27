@@ -70,10 +70,10 @@
                 </div>
             </div>
             @endforeach
+            <div>{{ $equipes->links() }}</div>
         </div>
     </div>
     </div>
     </div>
-    
 </main>
 @endsection

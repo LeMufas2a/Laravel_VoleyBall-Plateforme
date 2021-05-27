@@ -105,10 +105,8 @@ class JoueurController extends Controller
      * @param  \App\Models\Album  $album
      * @return \Illuminate\Http\Response
      */
-    public function destroy(Joueur $joueur, $id)
+    public function destroy(Joueur $joueur)
     {
-        $photo = Photo::find($id);
-        $photo->delete();
         $joueur->delete();
         return redirect()->back();
     }

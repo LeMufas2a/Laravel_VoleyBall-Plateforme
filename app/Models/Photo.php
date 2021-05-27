@@ -10,6 +10,6 @@ class Photo extends Model
     use HasFactory;
 
     public function photo(){
-        return $this->hasOne(Joueur::class);
+        return $this->belongsTo(Joueur::class);
     }
 }
