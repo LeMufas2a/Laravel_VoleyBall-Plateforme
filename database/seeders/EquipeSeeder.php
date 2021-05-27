@@ -18,11 +18,11 @@ class EquipeSeeder extends Seeder
             'nom' => 'FC Mufasa',
             'ville' => 'Bxl',
             'pays' => 'Belgique',
-            'max' => 9,
-            'ATT' => 2 ,
+            'max' => 6,
+            'ATT' => 1,
             'DC' => 2,
             'CT' => 2,
-            'RP' => 3,
+            'RP' => 2,
             'continent_id' => 1,
         ]);
     }

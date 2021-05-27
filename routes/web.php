@@ -1,8 +1,6 @@
 <?php
 
-use App\Http\Controllers\ContinentController;
 use App\Http\Controllers\EquipeController;
-use App\Http\Controllers\GenreController;
 use App\Http\Controllers\JoueurController;
 use App\Http\Controllers\PhotoController;
 use Illuminate\Support\Facades\Route;

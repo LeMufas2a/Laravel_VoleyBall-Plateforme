@@ -1,18 +1,20 @@
-.navtxt{
+.navtxt {
     color: white;
 }
 
-.navtxt:hover{
+.navtxt:hover {
     background-color: rgba(255, 255, 255, 0.568);
     color: black;
 }
-.navtxt:focus{
+.navtxt:focus {
     color: white !important;
 }
-.navtxt:active{
+.navtxt:active {
     color: black !important;
 }
-nav{
+nav {
+    background: linear-gradient(60deg, #e205a0, #0e1fb6);
     position: fixed;
     left: 0px;
+    top: 0px;
 }
