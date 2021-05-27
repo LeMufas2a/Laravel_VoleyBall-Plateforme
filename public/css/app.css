@@ -10849,3 +10849,12 @@ textarea.form-control-lg {
 .navtxt:active {
   color: black !important;
 }
+
+nav {
+  position: fixed;
+  left: 0px;
+}
+
+main {
+  margin-left: 16% !important;
+}

@@ -35,6 +35,6 @@ Route::resource('/photo', PhotoController::class);
 Route::post("photo/{id}/download", [PhotoController::class, 'download']);
 
 // Principale
-Route::get('/Admin', function(){
+Route::get('/admin', function(){
     return view('backoffice.principale.principale');
 })->name('main');
