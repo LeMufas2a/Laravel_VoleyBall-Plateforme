@@ -84,7 +84,8 @@ class EquipeController extends Controller
      */
     public function edit(Equipe $equipe)
     {
-        return view('backoffice.equipe.edit', compact('equipe'));
+        $continents = Continent::all();
+        return view('backoffice.equipe.edit', compact('equipe', 'continents'));
     }
 
     /**
