@@ -10851,7 +10851,7 @@ textarea.form-control-lg {
 }
 
 nav {
-  background: linear-gradient(60deg, #e205a0, #0e1fb6);
+  background: linear-gradient(60deg, #f62144, #c00010);
   position: fixed;
   left: 0px;
   top: 0px;
@@ -10863,7 +10863,7 @@ main {
 
 body {
   font-family: monospace;
-  background: linear-gradient(-90deg, #e205a0, #0e1fb6);
+  background: linear-gradient(-90deg, #f62144, #c00010);
 }
 
 /*!
